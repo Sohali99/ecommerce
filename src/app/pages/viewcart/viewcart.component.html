@@ -1,0 +1,48 @@
+<button class="shopmore" (click)="shopmore()">Shop More</button>
+
+<ng-container *ngIf="true">
+   <div class="container">
+    <div class="card-table">
+        <div class="card-product">
+            <table border="1" class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let getDetails of getCartDetails">
+                        <td>{{getDetails.id}}</td>
+                        <td>
+                            <img style="width: 120px" src="{{getDetails.image}}">
+                        </td>
+                        <td>{{getDetails.name}}</td>
+                        <td>
+                            <button class="itembtn" (click)="decrement(getDetails)">-</button>
+                            {{getDetails.quantity}}
+                            <button class="itembtn" (click)="increment(getDetails)">+</button>
+                        </td>
+                        <td>₹{{getDetails.price}}</td>
+                        <td>₹{{getDetails.quantity * getDetails.price }}.00</td>
+                        <td>
+                            <button type="button" (click)="deleteList(getDetails)">
+                                <img style="width: 20px" src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/trash-512.png">
+                            </button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   </div>
+</ng-container>
+<div class="container">
+    <button class="shopmore" (click)="clearcart(getCartDetails.id)">clear cart</button>
+</div>
