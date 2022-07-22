@@ -15,7 +15,16 @@ const routes: Routes = [
     path: 'dashboard/viewcart',
     loadChildren: () => import('./pages/viewcart/viewcart.module').then((m)=>m.ViewcartModule)   
   },
+  {
+    path:'dashboard/address',
+    loadChildren:() => import ( './pages/address-form/address-form.module' ).then((m)=>m.AddressFormModule)
+  },
+  {
+    path:'dashboard/datalist',
+    loadChildren:() => import ( './pages/data-list/data-list.module' ).then((m) => m.DataListModule)
+  }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

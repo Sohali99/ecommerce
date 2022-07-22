@@ -1,0 +1,19 @@
+.orderlist{
+    border: solid 1px rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+.orderstatusalign{
+    border-bottom: solid 1px rgb(0, 0, 0);
+    display: flex;
+}
+.orderId{
+    width: 70%;
+    margin: 10px;
+}
+.orderstatus{
+    margin: 10px;
+}
+.order3rd{
+    border-top: solid 1px rgb(0, 0, 0);
+
+}

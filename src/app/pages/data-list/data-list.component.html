@@ -1,0 +1,65 @@
+    <!-- <table style="width: 100%;">
+    <thead>
+        <tr>
+            <th>Order id</th>
+            <th>Status</th>
+            <th>Time</th>
+            <th>Delivery address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of listArr">
+            <td>{{data.orderId}}</td>
+            <td>{{data.status}}</td>
+            <td>{{data.date}}</td>
+            <td>name:{{data.deliveryAddress.name}}<br/>Address:{{data.deliveryAddress.address}}<br/>Pin no:{{data.deliveryAddress.PinNo}}</td>
+            <td><button>cancel</button></td>
+        </tr>
+    </tbody>
+</table> -->
+<div>
+<button (click)="backtohome()">Back to Home</button>
+<div class="orderlist" *ngFor="let data of listArr">
+    <div class="orderstatusalign" >
+        <div class="orderId">{{data.orderId}}</div>
+        <div class="orderstatus">Order Status:{{data.status}}</div>
+        <div class="orderstatus"><button (click)="onCanceled(data.orderId)">cancel</button></div>
+    </div>
+
+    <p><strong>Delivery Address:</strong></p>
+    <div>
+        <div>Name:{{data.deliveryAddress.name}}<br/>
+            Address:{{data.deliveryAddress.address}}<br/>
+            Pin no:{{data.deliveryAddress.PinNo}}
+        </div>
+        <p><strong>Order Items:</strong></p>
+        <table style="width:100%" border="1" >
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of data.productsList">
+                     <td><img style="width: 120px" src="{{p.image}}"></td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.quantity}}</td>
+                    <td>{{p.price*p.quantity}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="order3rd">
+        <div class="orderId">{{data.date}}</div>
+        <div class="orderstatus">total:{{data.orderPrice}}</div>
+    </div>
+</div>
+</div>
+
+
