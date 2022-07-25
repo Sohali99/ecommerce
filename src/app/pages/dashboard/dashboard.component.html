@@ -1,21 +1,23 @@
 <div class="navbar" style="display: flex;">
 <p class="shopnow">Shop Now!!!!!!</p>
-<button class="viewcart" (click)="viewcart()">viewcart</button>
+<button class="viewcart" (click)="viewcart()">viewcart()</button>
+
+
 </div>
 
-<div>
-        <select (change)="sortcategory($event)">
+<div class="filteralign">
+        <select class="filterspace" (change)="sortcategory($event)">
             <option value="all" >All</option>    
             <option value="vegetable" >Vegetables</option>     
             <option value="fruit" >Fruits</option>    
         </select> 
         <br/><br/>
-        <select (change)="sort($event)">
+        <select class="filterspace" (change)="sort($event)">
             <option value="Low" >Low to High</option>
             <option value="High" >High to Low</option>
         </select>
         <br/><br/>
-        <select (change)="sortcolor($event)">
+        <select class="filterspace" (change)="sortcolor($event)">
             <option value="all" >All</option>    
             <option value="red">Red</option>
             <option value="green">Green</option>

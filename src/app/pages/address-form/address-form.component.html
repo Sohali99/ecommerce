@@ -1,19 +1,22 @@
+<body>
 <form class="formalign" [formGroup]="form" #simpleForm="ngForm" (ngSubmit)="submit(simpleForm.value)">
     <br/><br/>
-    <label>Name:</label>
+    <label class="formlabel" >Name:</label>
     <input
+    class="forminput"
     type = "text" 
     name="name" 
     formControlName="name" 
     placeholder="Enter your Name" ngModel>
 
     <span class="error-msg" *ngIf="(showErrors && form.get('name')?.errors?.['required'])"> *Name is Required</span>
-    <span class="error-msg" *ngIf="(showErrors && form.hasError('minlength','name'))"> Name is too short</span><br/><br/>
+    <span class="error-msg" *ngIf="(showErrors && form.hasError('minlength','name'))"> Name is too short</span>
     <br/><br/>
 
 
-    <label>Number:</label>
+    <label class="formlabel">Number:</label>
     <input 
+    class="forminput"
     type = "number" 
     name="phone" 
     formControlName="phone" 
@@ -24,8 +27,9 @@
     <br/><br/>
  
  
-    <label>Pin no:</label>
+    <label class="formlabel">Pin no:</label>
     <input
+    class="forminput"
     type = "number" 
     name="PinNo" 
     formControlName="PinNo" 
@@ -33,13 +37,15 @@
     <br/><br/>
 
 
-    <label>Address:</label>
-    <textarea type = "text" 
+    <label class="formlabel">Address:</label>
+    <textarea type = "text"
+    class="forminput" 
     name="address" 
     formControlName="address" 
     placeholder="Enter your Address"
     ngModel></textarea>
     <br/><br/>
 
-
-    <button class="submit-button" type="submit">Submit</button></form>
+    <button class="submit-button" type="submit">Submit</button>
+</form>
+</body>

@@ -19,12 +19,12 @@
     </tbody>
 </table> -->
 <div>
-<button (click)="backtohome()">Back to Home</button>
+<button class="backtohome" (click)="backtohome()">←Back to Home</button>
 <div class="orderlist" *ngFor="let data of listArr">
     <div class="orderstatusalign" >
         <div class="orderId">{{data.orderId}}</div>
         <div class="orderstatus">Order Status:{{data.status}}</div>
-        <div class="orderstatus"><button (click)="onCanceled(data.orderId)">cancel</button></div>
+        <div class="orderstatus"><button class="cancelbtn" (click)="onCanceled(data.orderId)">cancel</button></div>
     </div>
 
     <p><strong>Delivery Address:</strong></p>

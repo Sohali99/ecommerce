@@ -41,10 +41,12 @@
     </div>
    </div>
 </ng-container>
-<div>Total:{{total}}</div>
+<div class="Totalitems"><strong>Total:</strong>{{total}}</div>
+<div style="display: flex;">
+    <div class="container">
+        <button class="shopmore" (click)="clearcart(getCartDetails.id)">clear cart</button>
+    </div>
 <div class="container">
     <button class="shopmore" (click)="addAddress()">Add Address</button>
 </div>
-<div class="container">
-    <button class="shopmore" (click)="clearcart(getCartDetails.id)">clear cart</button>
 </div>

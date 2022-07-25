@@ -15,5 +15,19 @@
 }
 .order3rd{
     border-top: solid 1px rgb(0, 0, 0);
-
+}
+.cancelbtn{
+    color: #fff;
+    background-color: rgb(18, 18, 41);
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+.backtohome{
+    margin: 20px;
+    color: #fff;
+    background-color: rgb(18, 18, 41);
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
 }
