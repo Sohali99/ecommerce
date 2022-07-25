@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
     colorFilter='';
     itemsCart:any = [];
     postArr:any = [];
+    cartNumber:number=0;
     cartlist:any = [ 
     {
       id: 1, 
@@ -87,6 +88,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartlist=this.cartlist.sort((low:any, high:any) => low.price - high.price);
+    this.showCartLength()
   }
 //for price
   sort(event: any){
@@ -175,5 +177,12 @@ sortcolor(event : any){
     localStorage.setItem("cartitem", JSON.stringify(this.postArr))
  
     return true;
+  }
+  showCartLength(){
+    if(localStorage.getItem('cartitem') != null){
+      var showLength= JSON.parse(localStorage.getItem('cartitem') || '{}') ;
+      this.cartNumber= showLength.length;
+      console.log(this.cartNumber)
+    }
   }
 }
